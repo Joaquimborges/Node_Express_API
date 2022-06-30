@@ -12,8 +12,8 @@ const showTask = async () => {
   try {
     const {
       data: { task },
-    } = await axios.get(`/api/tasks/${id}`)
-    const { _id: taskID, completed, name } = task
+    } = await axios.get(`/api/${id}`)
+    const { id: taskID, completed, name } = task
 
     taskIDDOM.textContent = taskID
     taskNameDOM.value = name

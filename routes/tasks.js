@@ -12,10 +12,10 @@ router.post('/api/create', create);
 router.get('/api/:id', getTask)
 router.get('/api/get/all', getAll);
 router.patch('/api/:id/update', updateTask);
-router.delete('api/:id', deleteTask);
+router.delete('/api/delete/:id', deleteTask);
 
  
-
+ 
 
 
 

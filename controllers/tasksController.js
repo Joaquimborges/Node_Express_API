@@ -34,7 +34,7 @@ module.exports = {
         foundedTask.completed = req.body.completed
         await foundedTask.save();
         
-        return res.status(200);
+        return res.status(200).json({ sucess: true });
     },
 
     async deleteTask (req, res) {
@@ -43,8 +43,8 @@ module.exports = {
         if(!foundedTask) {
             return res.status(404).json({msg: `No task with id : ${id}`});
         }
-        taskModel.destroy({ where: { id: foundedTask.id } });
-        return res.status(200);
+        await taskModel.destroy({ where: { id: id } });
+        return res.status(200).json({ sucess: true });
     }
 }
 
