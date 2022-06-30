@@ -34,7 +34,7 @@ module.exports = {
         foundedTask.completed = req.body.completed
         await foundedTask.save();
         
-        return res.status(200).json({ sucess: true });
+        return res.status(200).json(foundedTask);
     },
 
     async deleteTask (req, res) {
